@@ -4,7 +4,7 @@ import Router from './routes'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default props => (
-    <div>
+    <div className="container">
         <Router/>
     </div>
 )

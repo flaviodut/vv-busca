@@ -1,14 +1,28 @@
 import React from 'react'
 // import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 
 import Row from '../../commons/layout/row';
 import Grid from '../../commons/layout/grid';
 
+
 export default props => {
-    const title = {
-        color: 'tomato',
-        backgroundColor: 'cyan'
-    }
+    const InputNumeric = styled.div`
+        input {
+            max-width: 3rem;
+        }
+    `
+
+    const Pagination = styled.ul`
+        .page-link {
+            color: #6c757d;
+        }
+    
+        .page-item.active .page-link {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+    `
 
     return (
         <div className="container py-5">
@@ -16,7 +30,8 @@ export default props => {
 
             <Row>
                 <Grid cols="12">
-                    <h1 style={title}>Busca da busca</h1>
+                    <h1>Busca da busca</h1>
+                    <p className="lead">Descrição do módulo.</p>
                 </Grid>
             </Row>
 
@@ -53,7 +68,7 @@ export default props => {
 
             <Row>
                 <Grid cols="12">
-                    <div className="table-responsive mb-3">
+                    <div className="table-responsive mb-5">
                         <table className="table table-bordered">
                             <thead className="thead-light">
                                 <tr>
@@ -61,41 +76,34 @@ export default props => {
                                     <th scope="col">Prioridade</th>
                                     <th scope="col">Nível</th>
                                     <th scope="col" className="w-50">Nome</th>
-                                    <th scope="col" className="text-center">Aprovar?</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">
-                                        <span className="badge badge-pill badge-success"><span className="fa fa-check-circle"></span> Aprovado</span>
-                                    </th>
+                                    <td>
+                                        <a href="/" className="badge badge-pill badge-success"><span className="fa fa-check-circle"></span> Aprovado</a>
+                                    </td>
                                     <td>0,96</td>
                                     <td>
-                                        <div className="input-group input-group-sm">
+                                        <InputNumeric className="input-group input-group-sm">
                                             <div className="input-group-prepend">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonSub"><span className="fa fa-angle-down"></span></button>
                                             </div>
-                                            <input type="text" className="form-control input-number text-center" defaultValue="0" min="0" max="10" maxLength="2" />
+                                            <input type="text" className="form-control input-number text-center" defaultValue="0" min="0" max="100" maxLength="3" />
                                             <div className="input-group-append">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonAdd"><span className="fa fa-angle-up"></span></button>
                                             </div>
-                                        </div>
+                                        </InputNumeric>
                                     </td>
                                     <td>Samsung Galaxy S9</td>
-                                    <td className="text-center">
-                                        <div className="btn-group" role="group" aria-label="Exemplo básico">
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-check"></span></button> 
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-ban"></span></button>
-                                        </div>
-                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">
-                                    <span className="badge badge-pill badge-warning"><span className="fa fa-minus-circle"></span> Aguardando</span>
-                                    </th>
+                                    <td>
+                                        <a href="/" className="badge badge-pill badge-warning"><span className="fa fa-minus-circle"></span> Aguardando</a>
+                                    </td>
                                     <td>0,95</td>
                                     <td>
-                                        <div className="input-group input-group-sm">
+                                        <InputNumeric className="input-group input-group-sm">
                                             <div className="input-group-prepend">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonSub"><span className="fa fa-angle-down"></span></button>
                                             </div>
@@ -103,23 +111,17 @@ export default props => {
                                             <div className="input-group-append">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonAdd"><span className="fa fa-angle-up"></span></button>
                                             </div>
-                                        </div>
+                                        </InputNumeric>
                                     </td>
                                     <td>Samsung Galaxy S8</td>
-                                    <td className="text-center">
-                                        <div className="btn-group" role="group" aria-label="Exemplo básico">
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-check"></span></button> 
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-ban"></span></button>
-                                        </div>
-                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">
-                                    <span className="badge badge-pill badge-danger"><span className="fa fa-times-circle"></span> Reprovado</span>
-                                    </th>
+                                    <td>
+                                        <a href="/" className="badge badge-pill badge-danger"><span className="fa fa-times-circle"></span> Reprovado</a>
+                                    </td>
                                     <td>0,2</td>
                                     <td>
-                                        <div className="input-group input-group-sm">
+                                        <InputNumeric className="input-group input-group-sm">
                                             <div className="input-group-prepend">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonSub"><span className="fa fa-angle-down"></span></button>
                                             </div>
@@ -127,15 +129,9 @@ export default props => {
                                             <div className="input-group-append">
                                                 <button className="btn btn-secondary px-1" type="button" id="buttonAdd"><span className="fa fa-angle-up"></span></button>
                                             </div>
-                                        </div>
+                                        </InputNumeric>
                                     </td>
                                     <td>Xiaomi Redmi</td>
-                                    <td className="text-center">
-                                        <div className="btn-group" role="group" aria-label="Exemplo básico">
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-check"></span></button> 
-                                            <button type="button" className="btn btn-secondary btn-sm py-0 px-1"><span className="fa fa-ban"></span></button>
-                                        </div>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -145,8 +141,8 @@ export default props => {
 
             <Row>
                 <Grid cols="12">
-                    <nav aria-label="Navegação de página exemplo">
-                        <ul className="pagination justify-content-center">
+                    <nav aria-label="Navegação de termos da busca">
+                        <Pagination className="pagination justify-content-center">
                             <li className="page-item disabled">
                                 <a className="page-link" href="/" aria-label="Primeira" tabIndex="-1"><span className="fa fa-angle-double-left"></span></a>
                             </li>
@@ -164,7 +160,7 @@ export default props => {
                             <li className="page-item">
                                 <a className="page-link" href="/" aria-label="Última"><span className="fa fa-angle-double-right"></span></a>
                             </li>
-                        </ul>
+                        </Pagination>
                     </nav>
                 </Grid>
             </Row>

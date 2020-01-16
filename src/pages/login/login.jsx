@@ -1,16 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 
 import Row from '../../commons/layout/row'
 import Grid from '../../commons/layout/grid'
+import Header from '../../commons/template/header'
 
-export default props => (
-    <Row>
-        <Grid cols='6'>
-            <Link to="/">home</Link>
-        </Grid>
-        <Grid cols='6'>
-            <Link to="/">home</Link>
-        </Grid>
-    </Row>
-)
+export default props => {
+    return (
+        <div className="py-5">
+            <Header></Header>
+
+            <Row addClass="justify-content-center">
+                <Grid cols="12 8 4">
+                    Login
+                </Grid>
+            </Row>
+        </div>
+    )
+}

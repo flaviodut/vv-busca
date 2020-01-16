@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default props =>
-    <div className="row">
-        {props.children}
-    </div>
+export default class Row extends Component {
+    render() {
+        return (
+            <div className={'row ' + this.props.addClass}>
+                {this.props.children}
+            </div>
+        )
+    }
+}

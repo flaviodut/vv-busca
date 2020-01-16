@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Row from '../../commons/layout/row'
 import Grid from '../../commons/layout/grid'
+import Header from '../../commons/template/header'
 
 export default props => {
     const Table = styled.table`
@@ -34,6 +35,8 @@ export default props => {
 
     return (
         <div className="py-5">
+            {/* Coloquei o header aqui pra ficar mais fácil de eu transitar entre login e home */}
+            <Header></Header>
 
             {/* Componente heading title */}
             <Row>

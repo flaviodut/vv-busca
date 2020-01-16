@@ -1,10 +1,8 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
-import Row from '../../commons/layout/row';
-import Grid from '../../commons/layout/grid';
-
+import Row from '../../commons/layout/row'
+import Grid from '../../commons/layout/grid'
 
 export default props => {
     const Table = styled.table`
@@ -32,13 +30,12 @@ export default props => {
         .btn-success.active {
             color: #fff;
             background-color: #28a745;
-        }
-    `
+        }`
 
     return (
-        <div className="container py-5">
-            {/* <Link to="/login">login</Link> */}
+        <div className="py-5">
 
+            {/* Componente heading title */}
             <Row>
                 <Grid cols="12">
                     <h1>Busca da busca</h1>
@@ -46,6 +43,7 @@ export default props => {
                 </Grid>
             </Row>
 
+            {/* Campos de filtros */}
             <Row>
                 <Grid cols="12">
                     <div className="input-group align-self-center mb-3">
@@ -77,6 +75,7 @@ export default props => {
                 </Grid>
             </Row>
 
+            {/* Listagem de termos - Opção 1 */}
             <Row>
                 <Grid cols="12">
                     <div className="table-responsive mb-5">
@@ -150,6 +149,7 @@ export default props => {
                 </Grid>
             </Row>
 
+            {/* Listagem de termos - Opção 2 */}
             <Row>
                 <Grid cols="12">
                     <div className="table-responsive mb-5">
@@ -253,6 +253,7 @@ export default props => {
                 </Grid>
             </Row>
 
+            {/* Paginação gray */}
             <Row>
                 <Grid cols="12">
                     <nav aria-label="Navegação de termos da busca">

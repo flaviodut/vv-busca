@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="27px" viewBox="0 0 22 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ic/header/ic-profile</title>
+    <desc>Created with Sketch.</desc>
+    <g id="----" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PF/PDP" transform="translate(-1088.000000, -59.000000)" fill-rule="nonzero">
+            <g id="header/header-full" transform="translate(-312.000000, -8.000000)">
+                <g id="Group" transform="translate(1382.760000, 58.000000)">
+                    <g id="ic/header/ic-profile" transform="translate(17.000000, 9.000000)">
+                        <g>
+                            <ellipse id="Ellipse_1" stroke="#FFFFFF" stroke-width="2" cx="11.3984" cy="8.3608" rx="6.3352" ry="6.516"></ellipse>
+                            <g id="Group_6" transform="translate(0.000000, 16.621600)" fill="#FFFFFF">
+                                <g id="Group_5-Clipped">
+                                    <path d="M11.3984,0.5 C16.8803877,0.5 21.4298878,4.6190677 22.1864502,10.0000679 L20.1627492,10 L20.1191444,9.76243424 C19.3251631,5.76421945 15.9649195,2.75284189 11.9230742,2.51529568 L11.6584031,2.50375097 L11.3912848,2.49994937 C7.13078483,2.49994937 3.49699164,5.58803665 2.67511465,9.76394479 L2.63274921,10 L0.609749212,9.99985639 C1.36409056,4.62162288 5.91471227,0.5 11.3984,0.5 Z" id="Combined-Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -9,7 +9,7 @@ WebFont.load({
 
 export default createGlobalStyle`
   :root {
-    --primaryColor: #0061b0;
+    --primaryColor: #0061B0;
     --secondaryColor: #0056A4;
     --textColor: #575757;
     --fontFamily: 'Nunito', Arial, sans-serif;
@@ -26,13 +26,12 @@ export default createGlobalStyle`
 
   a,
   a:active {
-    color: --primaryColor;
-    text-decoration: none;
+    color: var(--textColor);
+    text-decoration: underline;
   }
 
   a:hover,
   a:focus {
-    color: --primaryColor;
-    text-decoration: underline;
+    color: var(--textColor);
   }
 `

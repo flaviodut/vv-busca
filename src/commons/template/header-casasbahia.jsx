@@ -119,6 +119,7 @@ export default class Header extends React.Component {
     `
 
     const AutoComplete = styled.div`
+      display: none!important;
       background-color: #fff;
       border-radius: 4px;
       box-shadow: 0 5px 7px rgba(0, 0, 0, .21);
@@ -159,7 +160,7 @@ export default class Header extends React.Component {
           font-size: 1rem;
           
           :hover {
-            background-color: rgba(243, 243, 243, .3);
+            background-color: #E7E7E7;
           }
         }
 

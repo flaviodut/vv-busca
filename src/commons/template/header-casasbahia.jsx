@@ -19,11 +19,17 @@ export default class Header extends React.Component {
 
   render() {
     const Header = styled.header`
-      background-color: #0061b0;
+      background-color: var(--primaryColor);
       font-size: .750rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     `
 
     const Logo = styled.h1`
+      margin-bottom: 0;
+      
       svg {
         height: 35px;
         width: auto;
@@ -120,7 +126,7 @@ export default class Header extends React.Component {
       width: 100%;
 
       h4 {
-        color: #0056A4;
+        color: var(--secondaryColor);
         font-size: 1.5rem;
         font-weight: 700;
         line-height: 1.5;
@@ -131,17 +137,35 @@ export default class Header extends React.Component {
         margin-bottom: 0;
       }
 
+      a,
+      a:active,
+      a:hover,
+      a:focus {
+        color: var(--textColor);
+        text-decoration: none;
+      }
+
+      .close {
+        position: absolute;
+        top: .75rem;
+        right: 1rem;
+        font-size: 2rem;
+      }
+
       .suggestions {
         padding: 1rem 0;
 
         li {
           font-size: 1rem;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-          padding: 0 1rem;
+          
+          :hover {
+            background-color: rgba(243, 243, 243, .3);
+          }
         }
 
-        &.suggestions-numbered {}
+        a {
+          padding: .5rem 1rem;
+        }
 
         .suggestion-number {
           background-color: #F3F3F3;
@@ -197,7 +221,7 @@ export default class Header extends React.Component {
           }
 
           .product-price-for {
-            color: #0056A4;
+            color: var(--secondaryColor);
             font-size: 1rem;
             font-weight: 800;
           }
@@ -226,55 +250,60 @@ export default class Header extends React.Component {
                   <input type="text" placeholder="O que você procura?" className="flex-grow-1 px-3" />
                   <button className="search-button"><ReactSVG src={IconSearch} /></button>
                   <AutoComplete className="position-absolute">
+                    <button type="button" className="close" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                     <div className="suggestions suggestions-numbered">
                       <h4>Termos mais buscados</h4>
                       <ul className="list-unstyled">
-                        <li className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">2</span>Xiaomi</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">3</span>Lava e seca</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">4</span>Armário de cozinha</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">5</span>Geladeira</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">6</span>iPhone</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">7</span>Xiaomi</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">8</span>Lava e seca</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">9</span>Armário de cozinha</li>
-                        <li className="d-flex align-items-center"><span className="suggestion-number">10</span>Geladeira</li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
+                        <li><a href="/" className="d-flex align-items-center"><span className="suggestion-number">1</span>iPhone</a></li>
                       </ul>
                     </div>
-                    <div className="suggestions suggestions-numbered">
+                    <div className="suggestions">
                       <ul className="list-unstyled">
-                        <li><span className="suggestion-searched">termo</span></li>
-                        <li><span className="suggestion-searched">termo</span> sufixo</li>
-                        <li>prefixo <span className="suggestion-searched">termo</span> sufixo</li>
-                        <li>prefixo <span className="suggestion-searched">termo</span></li>
+                        <li><a href="/" className="d-flex"><span className="suggestion-searched">termo</span></a></li>
+                        <li><a href="/" className="d-flex"><span className="suggestion-searched">termo</span></a></li>
+                        <li><a href="/" className="d-flex"><span className="suggestion-searched">termo</span></a></li>
+                        <li><a href="/" className="d-flex"><span className="suggestion-searched">termo</span></a></li>
                       </ul>
                     </div>
                     <div className="products">
                       <h4>Produtos sugeridos</h4>
                       <ul className="list-unstyled d-flex flex-column flex-lg-row justify-content-between">
-                        <li className="d-flex">
-                          <ReactSVG src={Rect} />
-                          <div className="d-flex flex-column">
-                            <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
-                            <span className="product-price-from">R$ 9.999,00</span>
-                            <span className="product-price-for">R$ 6.666,00</span>
-                          </div>
+                        <li>
+                          <a href="/" className="d-flex">
+                            <ReactSVG src={Rect} />
+                            <div className="d-flex flex-column">
+                              <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
+                              <span className="product-price-from">R$ 9.999,00</span>
+                              <span className="product-price-for">R$ 6.666,00</span>
+                            </div>
+                          </a>
                         </li>
-                        <li className="d-flex">
-                          <ReactSVG src={Rect} />
-                          <div className="d-flex flex-column">
-                            <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
-                            <span className="product-price-from">R$ 9.999,00</span>
-                            <span className="product-price-for">R$ 6.666,00</span>
-                          </div>
+                        <li>
+                          <a href="/" className="d-flex">
+                            <ReactSVG src={Rect} />
+                            <div className="d-flex flex-column">
+                              <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
+                              <span className="product-price-from">R$ 9.999,00</span>
+                              <span className="product-price-for">R$ 6.666,00</span>
+                            </div>
+                          </a>
                         </li>
-                        <li className="d-flex">
-                          <ReactSVG src={Rect} />
-                          <div className="d-flex flex-column">
-                            <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
-                            <span className="product-price-from">R$ 9.999,00</span>
-                            <span className="product-price-for">R$ 6.666,00</span>
-                          </div>
+                        <li>
+                          <a href="/" className="d-flex">
+                            <ReactSVG src={Rect} />
+                            <div className="d-flex flex-column">
+                              <span className="product-name">Smartphone Samsung Galaxy A10 Azul 32GB, Tela Infinita de 6.2", Câmera Traseira 13MP, Dual Chip, Android 9.0 e Processador Octa-Core</span>
+                              <span className="product-price-from">R$ 9.999,00</span>
+                              <span className="product-price-for">R$ 6.666,00</span>
+                            </div>
+                          </a>
                         </li>
                       </ul>
                     </div>

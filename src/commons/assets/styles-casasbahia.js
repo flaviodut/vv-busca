@@ -15,6 +15,10 @@ export default createGlobalStyle`
     --fontFamily: 'Nunito', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
+    --borderRadius: 4px;
+    --buttonSecondaryColor: #0061B0;
+    --buttonSecondaryColorHover: #4c90c8;
+    --inputBorderColor: #d9d9d9;
   }
 
   body {
@@ -33,5 +37,19 @@ export default createGlobalStyle`
   a:hover,
   a:focus {
     color: var(--textColor);
+  }
+
+  .form-control {
+    border-color: var(--inputBorderColor);
+
+    ::placeholder {
+      color: rgba(74, 74, 74, .6);
+    }
+  }
+  
+  .form-control-sm {
+    font-size: .75rem;
+    height: auto;
+    padding: .625rem .938rem;
   }
 `

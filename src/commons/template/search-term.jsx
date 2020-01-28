@@ -11,6 +11,15 @@ export default class SearchTerm extends React.Component {
     `
 
     const Suggestions = styled.div`
+      span {
+        display: block;
+        margin-bottom: .5rem;
+      }
+
+      ul {
+        margin-bottom: 2.5rem;
+      }
+
       a,
       a:active {
         border: 1px solid #ccc;

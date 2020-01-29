@@ -125,7 +125,7 @@ export default class SearchSidebarFilter extends React.Component {
     return (
       <Filter>
         <span className="title">{this.props.name}</span>
-        <ReactSVG src={IconMinus} wrapper="span" className="filter-toggle" onClick={this.handleToggleCollapse} />
+        <ReactSVG src={this.state.isCollapsed ? IconPlus : IconMinus} wrapper="span" className="filter-toggle" onClick={this.handleToggleCollapse} />
         <div id="filterContent" className={'filter-container' + (this.state.isCollapsed ? ' is-collapsed' : '')}>
           <input type="text" className="form-control form-control-sm" placeholder={'Buscar por ' + this.props.name.toLowerCase()} />
           <ul className={'list-unstyled' + (this.state.isShowAll ? ' is-show-all' : '')}>

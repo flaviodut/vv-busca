@@ -104,21 +104,21 @@ export default class SearchSidebarFilter extends React.Component {
         border: 1px solid #CACACA;
         border-radius: var(--borderRadius);
         display: block;
-        height: 1.417em;
+        height: 1.333em;
         left: 0;
         position: absolute;
-        top: 0;
-        width: 1.417em;
+        top: .083em;
+        width: 1.333em;
       }
 
       input[type="checkbox"]:checked + label::after {
-        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108.26 84.26'%3E%3Cpath fill='%2370a400' d='M0 41.76l17.87-17.97 24.37 23.06L88.93 0l19.33 18.24L42.6 84.26z'/%3E%3C/svg%3E") center no-repeat;
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 13'%3E%3Cpath fill='%2370A400' d='M16 2.395c0 .258-.103.516-.289.702l-8.877 8.877a1.001 1.001 0 01-1.404 0L.289 6.834a1.001 1.001 0 010-1.404l1.404-1.404a1.001 1.001 0 011.404 0L6.132 7.07 12.903.289a1.001 1.001 0 011.404 0l1.404 1.404c.186.186.289.444.289.702z'/%3E%3C/svg%3E") center no-repeat;
         content: '';
-        height: .917em;
+        height: .833em;
         left: .167em;
         position: absolute;
-        top: .25em;
-        width: 1.083em;
+        top: .417em;
+        width: 1em;
       }
     `
 

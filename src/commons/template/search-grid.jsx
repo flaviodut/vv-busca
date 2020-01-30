@@ -15,7 +15,7 @@ export default class SearchGrid extends React.Component {
 
       li {
         padding: 0 15px;
-        width: 25%;
+        width: 33.33333%;
       }
     `
 

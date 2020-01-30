@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ReactSVG } from 'react-svg'
 
 import Rating from './rating'
+import IconYoutube from '../assets/ic-youtube.svg'
 
 export default class ProductCard extends React.Component {
   constructor() {
@@ -14,8 +16,9 @@ export default class ProductCard extends React.Component {
   }
   
   getName(str) {
-    if (str.length > 75)
+    if (str.length > 75) {
       return str.substr(0, 75) + '…'
+    }
     
     return str
   }
@@ -42,6 +45,27 @@ export default class ProductCard extends React.Component {
         left: calc(.5rem + 15px);
         position: absolute;
         top: .5rem;
+
+        span {
+          margin-bottom: .25rem;
+
+          :last-of-type {
+            margin-bottom: 0;
+          }
+        }
+
+        .product-badges-discount {
+          align-items: center;
+          background-color: #FFB259;
+          border-radius: var(--borderRadius);
+          color: #fff;
+          display: flex;
+          font-size: 1rem;
+          font-weight: 800;
+          height: 30px;
+          justify-content: center;
+          width: 50px;
+        }
       }
 
       .product-controls {
@@ -50,6 +74,19 @@ export default class ProductCard extends React.Component {
         position: absolute;
         right: calc(.5rem + 15px);
         top: .5rem;
+
+        > span {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        .product-controls-favorite {
+          background-color: #F7D8D9;
+          height: 28px;
+          width: 28px;
+          border-radius: var(--borderRadius);
+        }
       }
 
       .product-image {
@@ -134,21 +171,34 @@ export default class ProductCard extends React.Component {
         }
       }
 
-      .product-buy {
+      button {
         margin-top: .5rem;
+        
+        &.btn-play {
+          display: flex;
+          align-items: center;
+
+          svg {
+            height: 13px;
+            width: 13px;
+
+            path {
+              fill: #fff;
+            }
+          }
+        }
       }
+
     `
 
     return (
       <ProductCard itemScope itemType="http://schema.org/Product">
         <div className="product-badges">
           <span className="product-badges-discount">-18%</span>
-          <span className="product-badges-black">BF</span>
         </div>
-        <div className="product-controls">
+        {/* <div className="product-controls">
           <span className="product-controls-favorite">F</span>
-          <span className="product-controls-lalala">L</span>
-        </div>
+        </div> */}
         <div className="product-image">
           <a href="/" title="Nome do produto" itemProp="url">
             <img itemProp="image" src="//placehold.it/292x292" alt="Nome do produto" />
@@ -171,7 +221,8 @@ export default class ProductCard extends React.Component {
               <link itemProp="availability" href={'http://schema.org/' + (this.state.isAvailable ? 'InStock' : 'OutOfStock')} />
             </div>
           </a>
-          <button className="product-buy btn btn-block btn-light">Comprar</button>
+          <button className="btn-play btn btn-sm btn-light"><ReactSVG src={IconYoutube} />Assista ao vídeo</button>
+          {/* <button className="product-buy btn btn-block btn-light">Comprar</button> */}
         </div>
       </ProductCard>
     )

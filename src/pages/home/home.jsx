@@ -23,10 +23,10 @@ export default props => {
           </Grid>
         </Row>
         <Row>
-          <Grid cols="12 2">
+          <Grid cols="12 3">
             <SearchSidebar />
           </Grid>
-          <Grid cols="12 10">
+          <Grid cols="12 9">
             <SearchGrid />
           </Grid>
         </Row>

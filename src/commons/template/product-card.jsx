@@ -1,16 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default class SearchProductCard extends React.Component {
+import Rating from './rating'
+
+export default class ProductCard extends React.Component {
   constructor() {
     super()
     this.name = 'Notebook Samsung Core i3-7020U 4GB 1TB Tela Full HD 15.6” Windows 10 Essentials E30 NP350XAA-KF3BR'
     this.state = {
-      isAvailable: true
+      isAvailable: true,
     }
     this.getName = this.getName.bind(this)
   }
-
+  
   getName(str) {
     if (str.length > 75)
       return str.substr(0, 75) + '…'
@@ -160,9 +162,7 @@ export default class SearchProductCard extends React.Component {
               <span>Frete grátis</span>
               <span>Frete grátis</span>
             </div>
-            <div className="product-rating" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
-              Rated <span itemProp="ratingValue">3.5</span>/5 based on <span itemProp="reviewCount">11</span> customer reviews
-            </div>
+            <Rating />
             <div className="product-price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
               <span className="product-price-from"><span className="product-price-prefix">De</span> R$ 1.111,00</span>
               <meta itemProp="priceCurrency" content="BRL" />

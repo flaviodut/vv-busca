@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import SearchProductCard from './search-product-card'
+import SearchProductCard from './product-card'
+import SearchProductControl from './search-controls'
 
-export default class SearchProductsGrid extends React.Component {
+export default class SearchGrid extends React.Component {
   render() {
-    const ProductsGrid = styled.ul`
+    const Grid = styled.ul`
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -20,14 +21,14 @@ export default class SearchProductsGrid extends React.Component {
 
     return (
       <div>
-        controles
-        <ProductsGrid className="list-unstyled">
+        <SearchProductControl />
+        <Grid className="list-unstyled">
           <SearchProductCard />
           <SearchProductCard />
           <SearchProductCard />
           <SearchProductCard />
           <SearchProductCard />
-        </ProductsGrid>
+        </Grid>
       </div>
     )
   }

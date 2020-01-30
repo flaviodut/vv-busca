@@ -8,7 +8,7 @@ import HeaderCasasBahia from '../../commons/template/header-casasbahia'
 
 import SearchTerm from '../../commons/template/search-term'
 import SearchSidebar from '../../commons/template/search-sidebar'
-import SearchResult from '../../commons/template/search-result'
+import SearchGrid from '../../commons/template/search-grid'
 
 export default props => {
   return (
@@ -27,7 +27,7 @@ export default props => {
             <SearchSidebar />
           </Grid>
           <Grid cols="12 10">
-            <SearchResult />
+            <SearchGrid />
           </Grid>
         </Row>
       </div>

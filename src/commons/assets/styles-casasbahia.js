@@ -11,14 +11,21 @@ export default createGlobalStyle`
   :root {
     --primaryColor: #0061B0;
     --secondaryColor: #0056A4;
+    
     --textColor: #575757;
     --fontFamily: 'Nunito', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
+    
     --borderRadius: 4px;
+    
+    --inputBorderColor: #d9d9d9;
     --buttonSecondaryColor: #0061B0;
     --buttonSecondaryColorHover: #4c90c8;
-    --inputBorderColor: #d9d9d9;
+
+    --ratingSize: 13px;
+    --ratingOn: #FEDC37;
+    --ratingOff: #BFBFBF;
   }
 
   body {

@@ -61,7 +61,7 @@ export default class ProductCard extends React.Component {
           color: #fff;
           display: flex;
           font-size: 1rem;
-          font-weight: 800;
+          font-weight: 700;
           height: 30px;
           justify-content: center;
           width: 50px;
@@ -115,7 +115,7 @@ export default class ProductCard extends React.Component {
           color: #fff;
           display: flex;
           font-size: .688rem;
-          font-weight: 800;
+          font-weight: 700;
           height: 18px;
           justify-content: center;
           margin-bottom: .5rem;
@@ -153,7 +153,7 @@ export default class ProductCard extends React.Component {
       .product-price-for {
         color: var(--primaryColor);
         font-size: 1.125rem;
-        font-weight: 800;
+        font-weight: 700;
 
         .product-price-prefix {
           font-size: 1rem;
@@ -167,7 +167,7 @@ export default class ProductCard extends React.Component {
         font-size: 1rem;
 
         span {
-          font-weight: 800;
+          font-weight: 700;
         }
       }
 
@@ -175,11 +175,25 @@ export default class ProductCard extends React.Component {
         margin-top: .5rem;
         
         &.btn-play {
-          display: flex;
           align-items: center;
+          background-color: #BC0406;
+          color: #fff;
+          display: flex;
+          font-size: .688rem;
+          padding-bottom: 0;
+          padding-top: 0;
+
+          :hover {
+            background-color: #C6292B;
+          }
+
+          .btn-play-icon {
+            margin-right: .375rem;
+          }
 
           svg {
             height: 13px;
+            vertical-align: text-bottom;
             width: 13px;
 
             path {
@@ -221,7 +235,7 @@ export default class ProductCard extends React.Component {
               <link itemProp="availability" href={'http://schema.org/' + (this.state.isAvailable ? 'InStock' : 'OutOfStock')} />
             </div>
           </a>
-          <button className="btn-play btn btn-sm btn-light"><ReactSVG src={IconYoutube} />Assista ao vídeo</button>
+          <button className="btn-play btn"><ReactSVG src={IconYoutube} wrapper="span" className="btn-play-icon" />Assista ao vídeo</button>
           {/* <button className="product-buy btn btn-block btn-light">Comprar</button> */}
         </div>
       </ProductCard>

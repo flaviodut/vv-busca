@@ -44,7 +44,7 @@ export default class SearchTerm extends React.Component {
         <Term>Samsung Galaxy</Term>
         <Suggestions>
           <span className="font-weight-bold">Sugestão de consulta:</span>
-          <ul className="list-unstyled d-flex">
+          <ul className="list-unstyled d-flex flex-wrap">
             <li><a href="/">Termo</a></li>
             <li><a href="/">Termo</a></li>
             <li><a href="/">Termo</a></li>

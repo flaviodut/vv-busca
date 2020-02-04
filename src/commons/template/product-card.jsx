@@ -39,12 +39,24 @@ export default class ProductCard extends React.Component {
         text-decoration: none;
       }
 
+      .product-container {
+        border: 1px solid transparent;
+        /* border-radius: var(--borderRadius); */
+        padding: 1rem;
+        position: relative;
+        transition: border 250ms ease-in-out;
+
+        :hover {
+          border-color: #ccc;
+        }
+      }
+
       .product-badges {
         display: flex;
         flex-direction: column;
-        left: calc(.5rem + 15px);
+        left: 1.5rem;
         position: absolute;
-        top: .5rem;
+        top: 1.5rem;
 
         span {
           margin-bottom: .25rem;
@@ -207,36 +219,38 @@ export default class ProductCard extends React.Component {
 
     return (
       <ProductCard itemScope itemType="http://schema.org/Product">
-        <div className="product-badges">
-          <span className="product-badges-discount">-18%</span>
-        </div>
-        {/* <div className="product-controls">
-          <span className="product-controls-favorite">F</span>
-        </div> */}
-        <div className="product-image">
-          <a href="/" title="Nome do produto" itemProp="url">
-            <img itemProp="image" src="//placehold.it/292x292" alt="Nome do produto" />
-          </a>
-        </div>
-        <div className="product-description">
-          <a href="/" title="Nome do produto">
-            <p className="product-name" itemProp="name">{this.getName(this.name)}</p>
-            <div className="product-flags">
-              <span>Frete grátis</span>
-              <span>Frete grátis</span>
-              <span>Frete grátis</span>
-            </div>
-            <Rating />
-            <div className="product-price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-              <span className="product-price-from"><span className="product-price-prefix">De</span> R$ 1.111,00</span>
-              <meta itemProp="priceCurrency" content="BRL" />
-              <span className="product-price-for" itemProp="price" content="1.000,00"><span className="product-price-prefix">Por</span> R$ 1.000,00</span>
-              <span className="product-price-installment">12x de <span>R$ 100,00</span></span>
-              <link itemProp="availability" href={'http://schema.org/' + (this.state.isAvailable ? 'InStock' : 'OutOfStock')} />
-            </div>
-          </a>
-          <button className="btn-play btn"><ReactSVG src={IconYoutube} wrapper="span" className="btn-play-icon" />Assista ao vídeo</button>
-          {/* <button className="product-buy btn btn-block btn-light">Comprar</button> */}
+        <div className="product-container">
+          <div className="product-badges">
+            <span className="product-badges-discount">-18%</span>
+          </div>
+          {/* <div className="product-controls">
+            <span className="product-controls-favorite">F</span>
+          </div> */}
+          <div className="product-image">
+            <a href="/" title="Nome do produto" itemProp="url">
+              <img itemProp="image" src="//placehold.it/292x292" alt="Nome do produto" />
+            </a>
+          </div>
+          <div className="product-description">
+            <a href="/" title="Nome do produto">
+              <p className="product-name" itemProp="name">{this.getName(this.name)}</p>
+              <div className="product-flags">
+                <span>Frete grátis</span>
+                <span>Frete grátis</span>
+                <span>Frete grátis</span>
+              </div>
+              <Rating />
+              <div className="product-price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
+                <span className="product-price-from"><span className="product-price-prefix">De</span> R$ 1.111,00</span>
+                <meta itemProp="priceCurrency" content="BRL" />
+                <span className="product-price-for" itemProp="price" content="1.000,00"><span className="product-price-prefix">Por</span> R$ 1.000,00</span>
+                <span className="product-price-installment">12x de <span>R$ 100,00</span></span>
+                <link itemProp="availability" href={'http://schema.org/' + (this.state.isAvailable ? 'InStock' : 'OutOfStock')} />
+              </div>
+            </a>
+            <button className="btn-play btn"><ReactSVG src={IconYoutube} wrapper="span" className="btn-play-icon" />Assista ao vídeo</button>
+            {/* <button className="product-buy btn btn-block btn-light">Comprar</button> */}
+          </div>
         </div>
       </ProductCard>
     )

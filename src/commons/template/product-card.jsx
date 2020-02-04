@@ -41,7 +41,7 @@ export default class ProductCard extends React.Component {
 
       .product-container {
         border: 1px solid transparent;
-        /* border-radius: var(--borderRadius); */
+        border-radius: var(--borderRadius);
         padding: 1rem;
         position: relative;
         transition: border 250ms ease-in-out;

@@ -23,9 +23,10 @@ export default class SearchSidebar extends React.Component {
     return (
       <FilterWrapper>
         <FilterSelected />
-        <Filter name="Categoria" />
-        <Filter name="Preço" />
-        <Filter name="Marca" />
+        <Filter name="Categoria" type="list" />
+        <Filter name="Preço" type="list" />
+        <Filter name="Cores" type="color" />
+        <Filter name="Marca" type="list" />
       </FilterWrapper>
     )
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ReactSVG } from 'react-svg'
 
+import If from '../operator/if'
 import IconMinus from '../assets/ic-minus.svg'
 import IconPlus from '../assets/ic-plus.svg'
 import IconCheck from '../assets/ic-check.svg'
@@ -66,10 +67,6 @@ export default class SearchSidebarFilter extends React.Component {
         &.is-collapsed {
           display: none;
         }
-
-        ul:not(.is-show-all) li:nth-child(n+6) {
-          display: none;
-        }
       }
 
       .filter-more {
@@ -84,6 +81,22 @@ export default class SearchSidebarFilter extends React.Component {
 
       .filter-counter {
         color: var(--primaryColor);
+      }
+    `
+
+    
+    const List = styled.ul`
+      &:not(.is-show-all) li:nth-child(n+6) {
+        display: none;
+      }
+    `
+
+    const ColorList = styled.ul`
+      margin-left: -.25rem;
+      margin-right: -.25rem;
+      
+      &:not(.is-show-all) li:nth-child(n+7) {
+        display: none;
       }
     `
 
@@ -122,63 +135,118 @@ export default class SearchSidebarFilter extends React.Component {
       }
     `
 
+    const ColorItem = styled.li`
+      font-size: 1rem;
+      width: calc(100% / 6);
+      margin-bottom: .25rem!important;
+      padding-left: .25rem;
+      padding-right: .25rem;
+
+      button {
+        background-color: ${props => props.hex};
+        border: 1px solid #DBDBDB;
+        border-radius: var(--borderRadius);
+        padding-top: 87.5%;
+        position: relative;
+        width: 100%;
+
+        & > span {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      svg {
+        height: auto;
+        stroke: var(--textColor);
+        stroke-width: 1;
+        width: 50%;
+
+        path {
+          fill: #fff;
+        }
+      }
+    `
+
     return (
       <Filter>
         <span className="title">{this.props.name}</span>
         <ReactSVG src={this.state.isCollapsed ? IconPlus : IconMinus} wrapper="span" className="filter-toggle" onClick={this.handleToggleCollapse} />
         <div id="filterContent" className={'filter-container' + (this.state.isCollapsed ? ' is-collapsed' : '')}>
-          <input type="text" className="form-control form-control-sm" placeholder={'Buscar por ' + this.props.name.toLowerCase()} />
-          <ul className={'list-unstyled' + (this.state.isShowAll ? ' is-show-all' : '')}>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck1" />
-              <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
-            </ListItem>
-            <ListItem>
-              <input type="checkbox" id="customCheck2" />
-              <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
-            </ListItem>
-          </ul>
-          <span className="filter-more" onClick={this.handleToggleShowAll}>{this.state.isShowAll ? 'Ver menos' : 'Ver mais'}</span>
+          <If test={this.props.type === 'list'}>
+            <input type="text" className="form-control form-control-sm" placeholder={'Buscar por ' + this.props.name.toLowerCase()} />
+            <List className={'list-unstyled' + (this.state.isShowAll ? ' is-show-all' : '')}>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck1" />
+                <label htmlFor="customCheck1">Samsung <span className="filter-counter">(1.879)</span></label>
+              </ListItem>
+              <ListItem>
+                <input type="checkbox" id="customCheck2" />
+                <label htmlFor="customCheck2">Motorola <span className="filter-counter">(179)</span></label>
+              </ListItem>
+            </List>
+            <span className="filter-more" onClick={this.handleToggleShowAll}>{this.state.isShowAll ? 'Ver menos' : 'Ver mais'}</span>
+          </If>
+          <If test={this.props.type === 'color'}>
+            <ColorList className={'list-unstyled d-flex flex-wrap' + (this.state.isShowAll ? ' is-show-all' : '')}>
+              <ColorItem hex="#f00"><button><If test={true}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#0f0"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#00f"><button><If test={true}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#0ff"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#f0f"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#ff0"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#000"><button><If test={true}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#fff"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#f0000f"><button><If test={true}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#0f00f0"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#0f000f"><button><If test={true}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+              <ColorItem hex="#f000f0"><button><If test={false}><ReactSVG src={IconCheck} wrapper="span" /></If></button></ColorItem>
+            </ColorList>
+            <span className="filter-more" onClick={this.handleToggleShowAll}>{this.state.isShowAll ? 'Ver menos' : 'Ver mais'}</span>
+          </If>
         </div>
       </Filter>
     )

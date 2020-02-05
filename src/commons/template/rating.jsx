@@ -27,11 +27,20 @@ export default class Rating extends React.Component {
 
       span {
         display: inline-block;
-        height: var(--ratingSize);
+        font-size: var(--ratingSize);
+        height: 1em;
+
+        @media (min-width: 992px) {
+          height: 1.3em;
+        }
       }
 
       & > span {
-        margin-right: 6px;
+        margin-right: .4em;
+
+        @media (min-width: 992px) {
+          margin-right: .6em;
+        }
         
         :last-of-type {
           margin-right: 0;
@@ -39,10 +48,15 @@ export default class Rating extends React.Component {
       }
 
       svg {
-        height: var(--ratingSize);
+        height: 1em;
         vertical-align: top;
-        width: var(--ratingSize);
-      }
+        width: 1em;
+
+        @media (min-width: 992px) {
+          height: 1.3em;
+          width: 1.3em;
+          }
+        }
     `
 
     const getType = props => {

@@ -23,7 +23,7 @@ export default createGlobalStyle`
     --buttonSecondaryColor: #0061B0;
     --buttonSecondaryColorHover: #4c90c8;
 
-    --ratingSize: 13px;
+    --ratingSize: 10px;
     --ratingOn: #FEDC37;
     --ratingOff: #BFBFBF;
   }

@@ -17,7 +17,7 @@ export default class SearchGrid extends React.Component {
 
       li {
         padding: 0 1rem;
-        width: 50%;
+        width: 100%;
 
         @media (min-width: 992px) {
           width: 33.33333%;

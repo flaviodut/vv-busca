@@ -12,22 +12,26 @@ export default class ProductCard extends React.Component {
     this.state = {
       isAvailable: true,
     }
-    this.getName = this.getName.bind(this)
+    // this.getName = this.getName.bind(this)
   }
   
-  getName(str) {
-    if (str.length > 75) {
-      return str.substr(0, 75) + '…'
-    }
+  // getName(str) {
+  //   if (str.length > 75) {
+  //     return str.substr(0, 75) + '…'
+  //   }
     
-    return str
-  }
+  //   return str
+  // }
 
   render() {
     const ProductCard = styled.li`
-      font-size: .875rem;
+      font-size: .75rem;
       margin-bottom: 40px;
       position: relative;
+
+      @media (min-width: 992px) {
+        font-size: .875rem;
+      }
 
       img {
         display: inline-block;
@@ -42,9 +46,15 @@ export default class ProductCard extends React.Component {
       .product-container {
         border: 1px solid transparent;
         border-radius: var(--borderRadius);
+        display: flex;
+        flex-direction: row;
         padding: 1rem;
         position: relative;
         transition: border 250ms ease-in-out;
+
+        @media (min-width: 992px) {
+          flex-direction: column;
+        }
 
         :hover {
           border-color: #ccc;
@@ -102,7 +112,12 @@ export default class ProductCard extends React.Component {
       }
 
       .product-image {
-        margin-bottom: 1rem;
+        margin-right: 1rem;
+
+        @media (min-width: 992px) {
+          margin-bottom: 1rem;
+          margin-right: 0;
+        }
       }
 
       .product-description {}
@@ -164,19 +179,31 @@ export default class ProductCard extends React.Component {
 
       .product-price-for {
         color: var(--primaryColor);
-        font-size: 1.125rem;
+        font-size: .875rem;
         font-weight: 700;
 
+        @media (min-width: 992px) {
+          font-size: 1.125rem;
+        }
+
         .product-price-prefix {
-          font-size: 1rem;
+          font-size: .75rem;
           font-weight: 400;
           text-transform: lowercase;
+
+          @media (min-width: 992px) {
+            font-size: 1rem;
+          }
         }
       }
 
       .product-price-installment {
         color: var(--primaryColor);
-        font-size: 1rem;
+        font-size: .75rem;
+
+        @media (min-width: 992px) {
+          font-size: 1rem;
+        }
 
         span {
           font-weight: 700;
@@ -233,7 +260,7 @@ export default class ProductCard extends React.Component {
           </div>
           <div className="product-description">
             <a href="/" title="Nome do produto">
-              <p className="product-name" itemProp="name">{this.getName(this.name)}</p>
+              <p className="product-name" itemProp="name">{this.name}</p>
               <div className="product-flags">
                 <span>Frete grátis</span>
                 <span>Frete grátis</span>

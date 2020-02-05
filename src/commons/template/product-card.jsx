@@ -26,11 +26,11 @@ export default class ProductCard extends React.Component {
   render() {
     const ProductCard = styled.li`
       font-size: .75rem;
-      margin-bottom: 40px;
       position: relative;
 
       @media (min-width: 992px) {
         font-size: .875rem;
+        margin-bottom: 40px;
       }
 
       img {
@@ -44,29 +44,39 @@ export default class ProductCard extends React.Component {
       }
 
       .product-container {
-        border: 1px solid transparent;
-        border-radius: var(--borderRadius);
+        border-bottom: 1px solid #E7E7E7;
         display: flex;
         flex-direction: row;
-        padding: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
         position: relative;
         transition: border 250ms ease-in-out;
 
         @media (min-width: 992px) {
+          border: 1px solid transparent;
+          border-radius: var(--borderRadius);
           flex-direction: column;
+          margin-bottom: 0;
+          padding: 1rem;
+          
+          :hover {
+            border-color: #ccc;
+          }
         }
 
-        :hover {
-          border-color: #ccc;
-        }
       }
 
       .product-badges {
         display: flex;
         flex-direction: column;
-        left: 1.5rem;
+        left: .5rem;
         position: absolute;
-        top: 1.5rem;
+        top: .5rem;
+
+        @media (min-width: 992px) {
+          left: 1.5rem;
+          top: 1.5rem;
+        }
 
         span {
           margin-bottom: .25rem;
@@ -82,11 +92,17 @@ export default class ProductCard extends React.Component {
           border-radius: var(--borderRadius);
           color: #fff;
           display: flex;
-          font-size: 1rem;
+          font-size: .75rem;
           font-weight: 700;
-          height: 30px;
+          height: 20px;
           justify-content: center;
-          width: 50px;
+          width: 40px;
+
+          @media (min-width: 992px) {
+            font-size: 1rem;
+            height: 30px;
+            width: 50px;
+          }
         }
       }
 

@@ -4,13 +4,17 @@ import styled from 'styled-components'
 export default class SearchProductControl extends React.Component {
   render() {
     const Controls = styled.div`
-      align-items: center;
       display: flex;
-      font-size: .875rem;
+      font-size: .75rem;
       justify-content: space-between;
       margin-bottom: 1.875em;
-      padding-left: 1rem;
-      padding-right: 1rem;
+
+      @media (min-width: 768px) {
+        align-items: center;
+        font-size: .875rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
 
       p {
         margin-bottom: 0;
@@ -18,13 +22,24 @@ export default class SearchProductControl extends React.Component {
     `
     
     const ControlField = styled.div`
+      align-items: flex-end;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      @media (min-width: 992px) {}
 
       label {
         margin-bottom: 0;
-        margin-right: 1rem;
         white-space: nowrap;
+
+        @media (min-width: 768px) {
+          margin-right: 1rem;
+        }
       }
 
       select {

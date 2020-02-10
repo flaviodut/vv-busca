@@ -11,9 +11,6 @@ export default class SearchSidebar extends React.Component {
   constructor() {
     super()
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this)
-    this.state = {
-      isVisible: false
-    }
     this.wrapperRef = React.createRef()
   }
 
@@ -95,6 +92,7 @@ export default class SearchSidebar extends React.Component {
         border-color: #0057A4;
         border-radius: 0;
         color: #fff;
+        cursor: pointer;
         font-size: .75rem;
         height: 38px;
         left: 0;
@@ -124,6 +122,7 @@ export default class SearchSidebar extends React.Component {
         border-radius: 0;
         bottom: 0;
         color: #fff;
+        cursor: pointer;
         font-size: .75rem;
         font-weight: 700;
         height: 40px;
@@ -140,6 +139,7 @@ export default class SearchSidebar extends React.Component {
       .btn-clean {
         align-items: center;
         color: #0056A4;
+        cursor: pointer;
         display: flex;
 
         :before {

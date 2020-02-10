@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ReactSVG } from 'react-svg'
 
+import If from '../operator/if'
 import Rating from './rating'
 import IconYoutube from '../assets/ic-youtube.svg'
 
@@ -10,7 +11,7 @@ export default class ProductCard extends React.Component {
     super()
     this.name = 'Notebook Samsung Core i3-7020U 4GB 1TB Tela Full HD 15.6” Windows 10 Essentials E30 NP350XAA-KF3BR'
     this.state = {
-      isAvailable: true,
+      isAvailable: false,
     }
     // this.getName = this.getName.bind(this)
   }
@@ -180,8 +181,26 @@ export default class ProductCard extends React.Component {
         margin-bottom: .5rem;
       }
 
-      .product-price > span {
-        display: block;
+      .product-price{
+        & > span {
+          display: block;
+        }
+
+        &.is-out-of-stock {
+          background-color: #f7f7f7;
+          border-radius: var(--borderRadius);
+          padding: .25rem .5rem;
+
+          span {
+            color: var(--primaryColor);
+          }
+
+          .product-unavailable {
+            font-weight: 700;
+          }
+
+          .product-notify {}
+        }
       }
 
       .product-price-from {
@@ -283,11 +302,17 @@ export default class ProductCard extends React.Component {
                 <span>Frete grátis</span>
               </div>
               <Rating />
-              <div className="product-price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-                <span className="product-price-from"><span className="product-price-prefix">De</span> R$ 1.111,00</span>
-                <meta itemProp="priceCurrency" content="BRL" />
-                <span className="product-price-for" itemProp="price" content="1.000,00"><span className="product-price-prefix">Por</span> R$ 1.000,00</span>
-                <span className="product-price-installment">12x de <span>R$ 100,00</span></span>
+              <div className={'product-price' + (!this.state.isAvailable ? ' is-out-of-stock' : '')} itemProp="offers" itemScope itemType="http://schema.org/Offer">
+                <If test={this.state.isAvailable}>
+                  <span className="product-price-from"><span className="product-price-prefix">De</span> R$ 1.111,00</span>
+                  <meta itemProp="priceCurrency" content="BRL" />
+                  <span className="product-price-for" itemProp="price" content="1.000,00"><span className="product-price-prefix">Por</span> R$ 1.000,00</span>
+                  <span className="product-price-installment">12x de <span>R$ 100,00</span></span>
+                </If>
+                <If test={!this.state.isAvailable}>
+                  <span className="product-unavailable">Produto indisponível no momento</span>
+                  <span className="product-notify">Avise-me quando chegar</span>
+                </If>
                 <link itemProp="availability" href={'http://schema.org/' + (this.state.isAvailable ? 'InStock' : 'OutOfStock')} />
               </div>
             </a>

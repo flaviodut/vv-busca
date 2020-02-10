@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 WebFont.load({
     google: {
-      families: ['Nunito:400,800']
+      families: ['Muli:400,700']
     }
   });
 
@@ -11,14 +11,14 @@ export default createGlobalStyle`
   :root {
     --primaryColor: #0061B0;
     --secondaryColor: #0056A4;
-
+    
     --textColor: #575757;
-    --fontFamily: 'Nunito', Arial, sans-serif;
+    --fontFamily: 'Muli', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
-
+    
     --borderRadius: 4px;
-
+    
     --inputBorderColor: #d9d9d9;
     --buttonSecondaryColor: #0061B0;
     --buttonSecondaryColorHover: #4c90c8;

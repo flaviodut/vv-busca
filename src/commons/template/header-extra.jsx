@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Row from '../layout/row'
 import Grid from '../layout/grid'
 
-import LogoExtra from '../../commons/assets/ex/logo-extra.png'
+// import LogoExtra from '../../commons/assets/ex/logo-extra.png'
 
 // ex: {
 //   logo: {
@@ -21,7 +21,7 @@ export default class Header extends React.Component {
   render() {
     
     return (
-      
+      <h1>Extra</h1>
     )
   }
 }

@@ -16,7 +16,7 @@ export default props => {
       <StylesCasasBahia />
       <HeaderCasasBahia />
 
-      <div className="container">
+      <div className="container-fluid container-md">
         <Row>
           <Grid cols="12">
             <SearchTerm />

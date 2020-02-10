@@ -233,7 +233,7 @@ export default class Header extends React.Component {
 
     return (
       <Header>
-        <div className="container py-2">
+        <div className="container-fluid container-md py-2">
           <Row>
             <Grid cols="12">
               <div className="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-center">

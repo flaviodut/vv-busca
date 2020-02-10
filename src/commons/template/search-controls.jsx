@@ -12,12 +12,20 @@ export default class SearchProductControl extends React.Component {
       @media (min-width: 768px) {
         align-items: center;
         font-size: .875rem;
+      }
+
+      @media (min-width: 992px) {
         padding-left: 1rem;
         padding-right: 1rem;
       }
 
       p {
         margin-bottom: 0;
+        margin-top: -1em;
+
+        @media (min-width: 576px) {
+          margin-top: 0;
+        }
       }
     `
     
@@ -28,10 +36,12 @@ export default class SearchProductControl extends React.Component {
       justify-content: center;
 
       @media (min-width: 768px) {
-        flex-direction: row;
       }
 
-      @media (min-width: 992px) {}
+      @media (min-width: 992px) {
+        align-items: center;
+        flex-direction: row;
+      }
 
       label {
         margin-bottom: 0;
@@ -53,7 +63,7 @@ export default class SearchProductControl extends React.Component {
     return (
       <Controls>
         <p><b>65</b> produtos encontrados</p>
-        <ControlField>
+        <ControlField className="d-none d-sm-flex">
           <label>Ordenar por</label>
           <select className="form-control">
             <option sort="1">Relevância</option>

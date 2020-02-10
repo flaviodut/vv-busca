@@ -55,7 +55,7 @@ export default class SearchSidebarFilterSelected extends React.Component {
 
     return (
       <FilterSelected>
-        <span className="title">Filtros selecionados</span>
+        <span className="title d-none d-sm-block">Filtros selecionados</span>
         <ul className="list-unstyled">
           <li>
             <span>Categoria:</span> Capas para celulares
@@ -70,7 +70,7 @@ export default class SearchSidebarFilterSelected extends React.Component {
             <ReactSVG src={IconClose} wrapper="span" className="btn-close" />
           </li>
         </ul>
-        <button type="button" className="btn btn-block btn-filter">Limpar filtros</button>
+        <button type="button" className="btn btn-block btn-filter d-none d-sm-block">Limpar filtros</button>
       </FilterSelected>
     )
   }

@@ -31,6 +31,7 @@ export default class SearchGrid extends React.Component {
         border-color: var(--buttonSecondaryColor);
         color: #fff;
         font-weight: 700;
+        margin-bottom: 40px;
 
         :hover,
         :focus {

@@ -46,6 +46,12 @@ export default createGlobalStyle`
     color: var(--textColor);
   }
 
+  @media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 1230px;
+    }
+  }
+
   .form-control {
     border-color: var(--inputBorderColor);
 

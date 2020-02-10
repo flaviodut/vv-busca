@@ -19,7 +19,7 @@ export default props => {
       <div className="container-fluid container-md">
         <Row>
           <Grid cols="12">
-            <SearchTerm />
+            <SearchTerm qtyProducts={1} />
           </Grid>
         </Row>
         <Row>

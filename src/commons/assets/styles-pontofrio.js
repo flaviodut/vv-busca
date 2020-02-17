@@ -9,19 +9,27 @@ WebFont.load({
 
 export default createGlobalStyle`
   :root {
-    --primaryColor: #0061B0;
-    --secondaryColor: #0056A4;
+    --primaryColor: #BC0406;
+    --secondaryColor: #FFC600;
     
-    --textColor: #575757;
     --fontFamily: 'Ubuntu', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
     
+    --textColor: #575757;
+    --titleColor: #BC0406;
+    --priceColor: #BC0406;
+    --outOfStockColor: #BC0406;
+    
     --borderRadius: 4px;
+
+    --discountFlagBackgroundColor: #FD4615;
     
     --inputBorderColor: #d9d9d9;
-    --buttonSecondaryColor: #0061B0;
-    --buttonSecondaryColorHover: #4c90c8;
+    --buttonPrimaryColor: #BC0406;
+    --buttonPrimaryColorHover: #BC0406;
+    --buttonSecondaryColor: #2D2A26;
+    --buttonSecondaryColorHover: #2D2A26;
 
     --ratingSize: 10px;
     --ratingOn: #FEDC37;

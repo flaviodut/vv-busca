@@ -45,7 +45,6 @@ const ProductCardStyle = styled.li`
         border-color: #ccc;
       }
     }
-
   }
 
   .product-badges {
@@ -70,7 +69,7 @@ const ProductCardStyle = styled.li`
 
     .product-badges-discount {
       align-items: center;
-      background-color: #FFB259;
+      background-color: var(--discountFlagBackgroundColor);
       border-radius: var(--borderRadius);
       color: #fff;
       display: flex;
@@ -111,14 +110,22 @@ const ProductCardStyle = styled.li`
 
   .product-image {
     margin-right: 1rem;
+    width: 40%;
 
     @media (min-width: 992px) {
       margin-bottom: 1rem;
       margin-right: 0;
+      width: auto;
     }
   }
 
-  .product-description {}
+  .product-description {
+    width: 60%;
+
+    @media (min-width: 992px) {
+      width: auto;
+    }
+  }
 
   .product-name {
     margin-bottom: .5rem;
@@ -173,7 +180,7 @@ const ProductCardStyle = styled.li`
       padding: .25rem .5rem;
 
       span {
-        color: var(--primaryColor);
+        color: var(--outOfStockColor);
       }
 
       .product-unavailable {
@@ -187,14 +194,10 @@ const ProductCardStyle = styled.li`
   .product-price-from {
     font-size: .75rem;
     text-decoration: line-through;
-
-    .product-price-prefix {
-      text-transform: lowercase;
-    }
   }
 
   .product-price-for {
-    color: var(--primaryColor);
+    color: var(--priceColor);
     font-size: .875rem;
     font-weight: 700;
 
@@ -205,7 +208,6 @@ const ProductCardStyle = styled.li`
     .product-price-prefix {
       font-size: .75rem;
       font-weight: 400;
-      text-transform: lowercase;
 
       @media (min-width: 992px) {
         font-size: 1rem;
@@ -214,7 +216,7 @@ const ProductCardStyle = styled.li`
   }
 
   .product-price-installment {
-    color: var(--primaryColor);
+    color: var(--priceColor);
     font-size: .75rem;
 
     @media (min-width: 992px) {

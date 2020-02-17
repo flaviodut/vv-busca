@@ -9,19 +9,27 @@ WebFont.load({
 
 export default createGlobalStyle`
   :root {
-    --primaryColor: #0061B0;
-    --secondaryColor: #0056A4;
+    --primaryColor: #C11926;
+    --secondaryColor: #A61722;
     
-    --textColor: #575757;
     --fontFamily: 'Muli', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
     
+    --textColor: #575757;
+    --titleColor: #138990;
+    --priceColor: #138990;
+    --outOfStockColor: #575757;
+    
     --borderRadius: 4px;
+
+    --discountFlagBackgroundColor: #EB1D29;
     
     --inputBorderColor: #d9d9d9;
-    --buttonSecondaryColor: #0061B0;
-    --buttonSecondaryColorHover: #4c90c8;
+    --buttonPrimaryColor: #EB1D29;
+    --buttonPrimaryColorHover: #EB1D29;
+    --buttonSecondaryColor: #48BAC7;
+    --buttonSecondaryColorHover: #48BAC7;
 
     --ratingSize: 10px;
     --ratingOn: #FEDC37;

@@ -33,8 +33,8 @@ export default class SearchSidebar extends React.Component {
       }
       
       .btn-filter {
-        background-color: #31B348;
-        border-color: #31B348;
+        background-color: var(--buttonPrimaryColor);
+        border-color: var(--buttonPrimaryColor);
         color: #fff;
         font-size: .688rem;
         text-transform: uppercase;
@@ -81,15 +81,15 @@ export default class SearchSidebar extends React.Component {
         }
 
         .title {
-          color: #0056A4;
+          color: var(--primaryColor);
           font-size: 1rem;
           font-weight: 800;
         }
       }
 
       .btn-back {
-        background-color: #0057A4;
-        border-color: #0057A4;
+        background-color: var(--buttonPrimaryColor);
+        border-color: var(--buttonPrimaryColor);
         border-radius: 0;
         color: #fff;
         cursor: pointer;
@@ -117,8 +117,8 @@ export default class SearchSidebar extends React.Component {
       }
       
       .btn-apply {
-        background-color: #27B542;
-        border-color: #27B542;
+        background-color: var(--buttonSecondaryColor);
+        border-color: var(--buttonSecondaryColor);
         border-radius: 0;
         bottom: 0;
         color: #fff;
@@ -138,7 +138,7 @@ export default class SearchSidebar extends React.Component {
 
       .btn-clean {
         align-items: center;
-        color: #0056A4;
+        color: var(--primaryColor);
         cursor: pointer;
         display: flex;
 
@@ -155,7 +155,7 @@ export default class SearchSidebar extends React.Component {
           width: 1em;
 
           path {
-            fill: #0056A4;
+            fill: var(--primaryColor);
           }
         }
       }

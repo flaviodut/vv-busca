@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import If from '../operator/if'
 
 const Term = styled.p`
-  color: var(--primaryColor);
+  color: var(--titleColor);
   font-size: 2rem;
   font-weight: 800;
   margin: 2rem 0 1rem;

@@ -7,7 +7,7 @@ import SearchTerm from '../../commons/template/search-term'
 import SearchSidebar from '../../commons/template/search-sidebar'
 import SearchGrid from '../../commons/template/search-grid'
 
-const bandeira = 'ex'
+const bandeira = 'pf'
 
 let Styles
 let Header

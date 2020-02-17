@@ -12,14 +12,22 @@ export default createGlobalStyle`
     --primaryColor: #0061B0;
     --secondaryColor: #0056A4;
 
-    --textColor: #575757;
     --fontFamily: 'Nunito', Arial, sans-serif;
     --fontSize: 1rem;
     --fontLineHeight: 1.5;
+    
+    --textColor: #575757;
+    --titleColor: #0061B0;
+    --priceColor: #0061B0;
+    --outOfStockColor: #0061B0;
 
     --borderRadius: 4px;
 
+    --discountFlagBackgroundColor: #FFB259;
+
     --inputBorderColor: #d9d9d9;
+    --buttonPrimaryColor: #31B348;
+    --buttonPrimaryColorHover: #31B348;
     --buttonSecondaryColor: #0061B0;
     --buttonSecondaryColorHover: #4c90c8;
 
